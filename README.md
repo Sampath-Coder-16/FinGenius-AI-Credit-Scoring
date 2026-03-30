@@ -61,5 +61,95 @@ FinGenius uses an **Agent-Based GenAI System**:
    - Explanation
 
 ---
+🏗️ System Architecture
+📌 Overview
 
-## 🏗️ System Architecture
+FinGenius follows a multi-agent AI architecture designed to process alternative financial data and generate an explainable credit score.
+
+The system is divided into modular components (agents), each responsible for a specific task in the pipeline.
+
+🔄 Architecture Flow
+User Input (CSV / API / SMS)
+        ↓
+Data Collection Agent
+        ↓
+Preprocessing Agent
+        ↓
+Feature Engineering Agent
+        ↓
+Risk Analysis Agent
+        ↓
+Credit Scoring Agent (ML Model)
+        ↓
+Explainability Agent (GenAI + SHAP)
+        ↓
+Compliance & Audit Agent
+        ↓
+Frontend / API Output
+🧠 Component Description
+1. Data Collection Agent
+Collects user financial data from:
+UPI transactions
+SMS transaction alerts
+Digital wallet logs
+Utility bills
+Accepts CSV input (for prototype)
+2. Preprocessing Agent
+Cleans raw data
+Handles missing values
+Normalizes transaction formats
+Converts unstructured SMS → structured data
+3. Feature Engineering Agent
+
+Extracts meaningful financial behavior:
+
+Total debit / credit
+Transaction frequency
+Average transaction amount
+Utility payment consistency
+Failed transaction ratio
+4. Risk Analysis Agent
+Detects anomalies
+Identifies risky behavior patterns
+Filters invalid or suspicious data
+5. Credit Scoring Agent
+Uses ML models:
+XGBoost / Random Forest
+Predicts:
+Credit Score (0–100)
+Risk Level (Low / Medium / High)
+6. Explainability Agent (GenAI Layer)
+Uses:
+SHAP (feature importance)
+LLM (for natural explanation)
+
+Example Output:
+
+“User has stable income and pays bills on time, resulting in low risk.”
+
+7. Compliance & Audit Agent
+Stores:
+Input data
+Features
+Predictions
+Ensures:
+Transparency
+Fairness
+Audit trace
+8. Frontend / API Layer
+Built using:
+Streamlit / FastAPI
+Displays:
+Credit Score
+Risk Level
+Explanation
+📊 Architecture Diagram 
+<img width="576" height="684" alt="image" src="https://github.com/user-attachments/assets/e7a76a8e-732f-442b-8baa-2c722a9bd7ce" />
+
+
+⚙️ Key Design Principles
+Modular Agent-Based Design
+Explainable AI (XAI)
+Scalable FinTech Architecture
+Real-world data adaptability
+Compliance-ready system
